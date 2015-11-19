@@ -1,3 +1,9 @@
 node_modules/
 
-config/passport.js
+config/strategies/google.strategies.js
+
+config/strategies/twitter.strategies.js
+
+config/strategies/google.strategies.js
+
+config/strategies/google.strategies.js
