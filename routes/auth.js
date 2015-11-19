@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 router.route('/google/callback')
-    .get(passport.authenticate('google', { 
+    .get(passport.authenticate('google', {
         successRedirect: '/users/',
         failure: '/error/'
 }));
@@ -16,5 +16,13 @@ router.route('/google')
             'https://www.googleapis.com/auth/userinfo.email']
 }))
 
-module.exports = router;
+router.route('/twitter/callback')
+    .get(passport.authenticate('twitter', {
+        successRedirect: '/users/',
+        failure: '/error/'
+    }));
 
+router.route('/twitter')
+    .get(passport.authenticate('twitter'))
+
+module.exports = router;
