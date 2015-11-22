@@ -2,14 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 
-router.use("/", function(req, res, next){
+router.use('/', function(req, res, next){
+
     if(!req.user){
-      res.redirect('/');
+        res.redirect('/');
     }
     next();
 })
-
-
 /* GET users listing. */
 router.get('/', function(req, res) {
   res.render('users', {user: {name: req.user.displayName,

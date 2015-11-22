@@ -1,21 +1,21 @@
-var passport = require('passport')
-
-module.exports = function(app) {
+var passport = require('passport');
 
 
-  app.use(passport.initialize());
-  app.use(passport.session());
+module.exports = function (app) {
 
-  passport.serializeUser(function(user, done){
-      done(null, user)
-  });
+    app.use(passport.initialize());
+    app.use(passport.session());
 
-  passport.deserializeUser(function(user, done){
-      done(null, user);
-  });
+    passport.serializeUser(function (user, done) {
+        done(null, user)
+    });
 
-  require('./strategies/google.strategies')();
-  require('./strategies/twitter.strategies')();
-  require('./strategies/facebook.strategies')();
+    passport.deserializeUser(function (user, done) {
+        done(null, user);
+    });
+    
+    require('./strategies/google.strategy')();
+    require('./strategies/twitter.strategy')();
+    require('./strategies/facebook.strategy')();
 
 };
