@@ -1,7 +1,7 @@
 node_modules/
 
-config/strategies/google.strategy.js
+config/strategies/google.strategies.js
 
-config/strategies/twitter.strategy.js
+config/strategies/twitter.strategies.js
 
-config/strategies/facebook.strategy.js
+config/strategies/facebook.strategies.js
